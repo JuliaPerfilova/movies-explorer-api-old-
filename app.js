@@ -1,15 +1,15 @@
 const express = require('express');
-const mongoose = require("mongoose");
-const {DB_ADDRESS_DEV} = require("./utils/constants");
-const helmet = require("helmet");
-const cors = require("cors");
-const bodyParser = require("body-parser");
+const mongoose = require('mongoose');
+const helmet = require('helmet');
+const cors = require('cors');
+const bodyParser = require('body-parser');
+const { errors } = require('celebrate');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
-const router = require("./routes/index");
-const {errors} = require("celebrate");
+const router = require('./routes/index');
+const { DB_ADDRESS_DEV } = require('./utils/constants');
 const errorHandler = require('./middlewares/errorHandler');
 
-const { PORT = 3000, NODE_ENV, DB_ADDRESS } = process.env;
+const { PORT = 3001, NODE_ENV, DB_ADDRESS } = process.env;
 
 const app = express();
 
